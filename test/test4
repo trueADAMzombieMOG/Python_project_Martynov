@@ -1,0 +1,64 @@
+#Описать функцию Mean(X, Y, AMean, GMean), вычисляющую среднее
+#арифметическое AMean = (X+Y)/2 и среднее геометрическое GMean = y/(X*Y) двух
+#положительных чисел X и Y (X и Y — входные, AMean и GMean — выходные
+#параметры вещественного типа). С помощью этой функции найти среднее
+#арифметическое и среднее геометрическое для пар (A, B), (A, C), (A, D), если даны
+#A, B, C, D.
+
+def Amean(X, Y):
+    result = (X+Y)/2
+    print(result)
+    return X, Y
+
+def Gmean(X, Y):
+    result1 = Y/(X*Y)
+    print(result1)
+    return X, Y
+def Mean(X, Y):
+    Amean(X,Y)
+    Gmean(X,Y)
+    return Amean, Gmean
+A = input('A=')
+while type(A) != float:
+    try:
+        A = float(A)
+        if A<0:
+            print("число должно быть положительным")
+            A = input('A=')
+    except ValueError:
+        print('не корректное значение')
+        A = input('A=')
+B = input('B=')
+while type(B) != float:
+    try:
+        B = float(B)
+        if B<0:
+            print("число должно быть положительным")
+            B = input('B=')
+    except ValueError:
+        print('не корректное значение')
+        B = input('B=')
+C = input('C=')
+while type(C) != float:
+    try:
+        C = float(C)
+        if C<0:
+            print("число должно быть положительным")
+            C = input('C=')
+    except ValueError:
+        print('не корректное значение')
+        C = input('C=')
+D = input('D=')
+while type(D) != float:
+    try:
+        D = float(D)
+        if D<0:
+            print("число должно быть положительным")
+            D = input('D=')
+    except ValueError:
+        print('не корректное значение')
+        D = input('D=')
+
+pack = [(A,B), (A,C), (A,D)]
+for X, Y in pack:
+    Mean(X,Y)
